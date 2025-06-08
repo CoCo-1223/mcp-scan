@@ -18,6 +18,9 @@ from .MCPScanner import MCPScanner
 from .paths import WELL_KNOWN_MCP_PATHS, client_shorthands_to_paths
 from .printer import print_scan_result
 from .StorageFile import StorageFile
+from .paths import WELL_KNOWN_MCP_PATHS, client_shorthands_to_paths
+from .printer import print_scan_result
+from .StorageFile import StorageFile
 from .version import version_info
 # ← 캐시 관련 import 추가
 from .cache import SimpleCache
@@ -83,11 +86,27 @@ def add_common_arguments(parser):
         default="~/.mcp-scan",
         help="Path to store scan results and whitelist information",
         metavar="FILE",
+        help="Path to store scan results and whitelist information",
+        metavar="FILE",
     )
     parser.add_argument(
         "--base-url",
         type=str,
         default="https://mcp.invariantlabs.ai/",
+        help="Base URL for the verification server",
+        metavar="URL",
+    )
+    parser.add_argument(
+        "--verbose",
+        default=False,
+        action="store_true",
+        help="Enable detailed logging output",
+    )
+    parser.add_argument(
+        "--print-errors",
+        default=False,
+        action="store_true",
+        help="Show error details and tracebacks",
         help="Base URL for the verification server",
         metavar="URL",
     )

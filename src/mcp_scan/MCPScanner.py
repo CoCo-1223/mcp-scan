@@ -73,6 +73,7 @@ class MCPScanner:
         self.checks_per_server = checks_per_server
         self.storage_file_path = os.path.expanduser(storage_file)
         logger.debug("Storage file path: %s", self.storage_file_path)
+        logger.debug("Storage file path: %s", self.storage_file_path)
         self.storage_file = StorageFile(self.storage_file_path)
         self.server_timeout = server_timeout
         self.suppress_mcpserver_io = suppress_mcpserver_io
